@@ -1,0 +1,53 @@
+:root {
+  --bg: #fffaf3; --surface: #ffffff; --text: #2a211b; --muted: #7a6c60; --line: #eadfce;
+  --brand: #c2410c; --brand-ink: #ffffff; --chip: #fff1e0; --ok: #166534; --warn: #b45309;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #17120e; --surface: #221b15; --text: #f5ebe0; --muted: #a8998a; --line: #3a2f26; --brand: #f97316; --brand-ink: #1b0f06; --chip: #34261a; }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 system-ui, -apple-system, 'Segoe UI', sans-serif; }
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 24px 16px 64px; }
+.wrap.narrow { max-width: 640px; }
+.hero { text-align: center; padding: 24px 0 8px; }
+.hero h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0; }
+.hero p, .muted { color: var(--muted); }
+.searchbar { display: flex; gap: 8px; margin: 16px 0; }
+.searchbar input { flex: 1; min-width: 0; padding: 14px 16px; font-size: 1rem; border: 2px solid var(--line); border-radius: 12px; background: var(--surface); color: var(--text); }
+.searchbar input:focus { outline: none; border-color: var(--brand); }
+button { font: inherit; cursor: pointer; }
+.searchbar button, .order { background: var(--brand); color: var(--brand-ink); border: 0; border-radius: 12px; padding: 0 22px; font-weight: 600; }
+.order { display: inline-block; padding: 14px 24px; margin-top: 8px; }
+button:disabled { opacity: .6; }
+.examples, .understood { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0 20px; }
+.chip { background: var(--chip); color: var(--text); border: 1px solid var(--line); border-radius: 999px; padding: 6px 14px; font-size: .92rem; }
+.chip:hover { border-color: var(--brand); }
+.badge { background: var(--chip); color: var(--warn); border-radius: 6px; padding: 2px 8px; font-size: .8rem; }
+.grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: transform .12s, box-shadow .12s; }
+.card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
+.photo { position: relative; background: linear-gradient(135deg, #fde7c8, #f9c9a0); display: grid; place-items: center; overflow: hidden; }
+.photo.card { aspect-ratio: 4 / 3; }
+.photo.hero { aspect-ratio: 16 / 9; border-radius: 14px; margin: 12px 0; }
+.emoji { font-size: 3rem; }
+.card-body { padding: 12px 14px 16px; }
+.row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.row h1, .row h3 { margin: 0; }
+.card h3 { font-size: 1.05rem; }
+.why { color: var(--ok); font-size: .88rem; font-weight: 600; margin: 4px 0; }
+.desc { color: var(--muted); font-size: .9rem; margin: 0; }
+.empty { text-align: center; padding: 24px 0; }
+.relax { text-align: left; margin-top: 20px; }
+.link { background: none; border: 0; color: var(--brand); font-weight: 600; padding: 0; margin-bottom: 12px; text-align: left; }
+.error { color: #b91c1c; }
+.facts { list-style: none; padding: 0; display: grid; gap: 6px; }
+.price { font-size: 1.3rem; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.admin input, .admin select, .admin textarea { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--text); font: inherit; }
+.admin form { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin: 16px 0; }
+.admin label { display: grid; gap: 4px; font-size: .85rem; color: var(--muted); }
+.admin .full { grid-column: 1 / -1; }
+.admin .btn { background: var(--brand); color: var(--brand-ink); border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 600; }
+.admin .btn.ghost { background: var(--chip); color: var(--text); border: 1px solid var(--line); }

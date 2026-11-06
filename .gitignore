@@ -1,0 +1,19 @@
+# dependencies and build output
+node_modules
+.next
+*.tsbuildinfo
+next-env.d.ts
+
+# secrets: never commit these (only .env.example, which holds placeholders)
+.env
+.env.*
+!.env.example
+
+# Supabase CLI local state (contains your linked project ref)
+supabase/.temp
+supabase/.branches
+
+# misc
+.DS_Store
+.vercel
+npm-debug.log*
