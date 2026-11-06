@@ -1,0 +1,35 @@
+-- Demo menu. NOTE: allergens_verified = true only because this is sample data.
+-- For a real restaurant, a human must check every row before you set it.
+-- Coconut is recorded as 'nuts' on purpose (conservative).
+insert into dishes (slug,name,description,category,price,spice_level,is_vegetarian,is_vegan,allergens,allergens_verified,tags,sold_out) values
+('nyama-choma','Nyama Choma','Charcoal-grilled goat ribs served with kachumbari and ugali.','Grill',1200,1,false,false,'{}',true,'{grilled,filling,sharing}',false),
+('ugali-sukuma','Ugali & Sukuma Wiki','Maize meal with sauteed collard greens and tomato. Simple and satisfying.','Traditional',250,0,true,true,'{}',true,'{filling,cheap,comfort,traditional}',false),
+('beef-pilau','Beef Pilau','Spiced rice cooked with beef, cumin, cardamom and pilipili. Bold and hearty.','Rice',650,2,false,false,'{}',true,'{filling,comfort,rice}',false),
+('chapati-beans','Chapati & Beans','Soft layered chapati with slow-cooked beans in a tomato sauce.','Traditional',300,0,true,true,'{gluten}',true,'{filling,cheap,comfort}',false),
+('githeri','Githeri','Maize and beans simmered with onions and tomato. Farm-house comfort.','Traditional',280,0,true,true,'{}',true,'{filling,cheap,comfort,traditional}',false),
+('mukimo-beef-stew','Mukimo with Beef Stew','Mashed potato, greens and maize with a rich beef stew. A warm hug on a rainy day.','Traditional',550,0,false,false,'{}',true,'{comfort,filling,rainy-day}',false),
+('chicken-biryani','Chicken Biryani','Fragrant layered rice with spiced chicken, yoghurt and fried onions.','Rice',800,2,false,false,'{dairy}',true,'{filling,rice,sharing}',false),
+('samaki-wa-nazi','Samaki wa Nazi','Tilapia in a creamy coconut curry with mild spice, served with rice.','Seafood',950,1,false,false,'{fish,nuts}',true,'{comfort,rice}',false),
+('mandazi-chai','Mandazi & Chai','Cardamom-scented fried dough with a pot of milky spiced tea.','Snacks',200,0,true,false,'{gluten,dairy,eggs}',true,'{light,snack,sweet,breakfast}',false),
+('veg-samosa','Vegetable Samosas','Crisp pastry triangles filled with spiced potato and peas (3 pieces).','Snacks',250,1,true,true,'{gluten}',true,'{snack,light}',false),
+('beef-samosa','Beef Samosas','Crisp pastry triangles filled with seasoned minced beef (3 pieces).','Snacks',300,1,false,false,'{gluten}',true,'{snack}',false),
+('kuku-choma','Kuku Choma','Half chicken marinated in lemon and garlic, grilled over charcoal.','Grill',900,1,false,false,'{}',true,'{grilled,filling,sharing}',false),
+('chips-mayai','Chips Mayai','Fluffy egg omelette cooked with fries. A street-food favourite, kids love it.','Street Food',350,0,true,false,'{eggs}',true,'{filling,cheap,kids}',false),
+('chips-chicken','Chips & Chicken','Golden fries with crispy fried chicken pieces. Mild, kid friendly.','Street Food',750,0,false,false,'{gluten}',true,'{filling,kids}',false),
+('matoke-beef','Matoke with Beef','Green bananas stewed in tomato and beef broth.','Traditional',600,0,false,false,'{}',true,'{comfort,filling,traditional}',false),
+('ndengu-chapati','Ndengu & Chapati','Green gram lentil stew with soft chapati.','Traditional',320,0,true,true,'{gluten}',true,'{filling,cheap,comfort}',false),
+('wali-maharagwe','Wali wa Nazi na Maharagwe','Coconut rice with red beans in coconut sauce.','Rice',400,0,true,true,'{nuts}',true,'{filling,comfort,rice}',false),
+('kachumbari-salad','Kachumbari Salad','Fresh tomato, onion, cucumber and coriander with lime. Light and refreshing.','Salads',250,1,true,true,'{}',true,'{light,healthy}',false),
+('grilled-tilapia','Grilled Tilapia & Ugali','Whole tilapia grilled with lemon and herbs, served with ugali and greens.','Seafood',850,1,false,false,'{fish}',true,'{grilled,filling}',false),
+('pilipili-wings','Pilipili Wings','Chicken wings tossed in fiery pilipili sauce. Very hot.','Street Food',700,3,false,false,'{}',true,'{sharing,snack}',true),
+('spicy-veg-curry','Spicy Vegetable Curry','Seasonal vegetables in a spicy tomato and ginger curry, served with rice.','Curries',650,2,true,true,'{}',true,'{filling,rice,healthy}',false),
+('groundnut-stew','Groundnut Stew','Creamy peanut stew with sweet potato and greens.','Traditional',600,1,true,true,'{nuts}',true,'{comfort,filling}',false),
+('chicken-supu','Chicken Supu','Light chicken broth with herbs and vegetables. Warming on a cold, rainy evening.','Soups',450,0,false,false,'{}',true,'{light,comfort,rainy-day}',false),
+('beef-burger','Beef Burger','Grilled beef patty, cheese, lettuce and tomato in a toasted bun with fries.','Fast Food',750,0,false,false,'{gluten,dairy}',true,'{filling,kids}',false),
+('margherita-pizza','Margherita Pizza','Tomato, mozzarella and basil on a thin crust. Great for kids and sharing.','Fast Food',900,0,true,false,'{gluten,dairy}',true,'{kids,sharing,filling}',false),
+('fruit-salad','Fresh Fruit Salad','Pineapple, watermelon, mango and passion fruit.','Salads',300,0,true,true,'{}',true,'{light,healthy,sweet}',false),
+('karanga-brittle','Karanga Brittle','Crunchy roasted peanut and caramelised sugar brittle.','Snacks',150,0,true,true,'{nuts}',true,'{snack,sweet}',false),
+('mbuzi-stew','Mbuzi Stew','Slow-cooked goat stew in a rich tomato gravy with a touch of pilipili.','Traditional',700,1,false,false,'{}',true,'{comfort,filling,rainy-day}',false),
+('paneer-tikka','Paneer Tikka Masala','Paneer cubes in a spicy cashew and tomato gravy with naan.','Curries',850,2,true,false,'{dairy,nuts,gluten}',true,'{filling,sharing}',false),
+('lentil-wrap','Lentil & Veg Wrap','Spiced lentils and fresh vegetables in a chapati wrap.','Wraps',450,1,true,true,'{gluten}',true,'{light,healthy}',false)
+on conflict (slug) do nothing;
